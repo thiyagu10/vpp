@@ -1,7 +1,7 @@
 #! /bin/bash
 #####	VPP Installation Steps on Linux Ubuntu-20.04
-sed -i '/PermitRootLogin/s/prohibit-password/yes/' /etc/ssh/sshd_config
-sed -i '/PasswordAuthentication/s/no/yes/' /etc/ssh/sshd_config
+sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+sudo sed -i '/PasswordAuthentication/s/no/yes/' /etc/ssh/sshd_config
 sudo systemctl restart sshd
 sudo timedatectl set-timezone Asia/Kolkata
 sudo apt update -y
