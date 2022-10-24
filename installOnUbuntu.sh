@@ -29,7 +29,7 @@ allow-hotplug enp0s10
 EOF
 rm -rf /etc/netplan/*.yaml
 systemctl restart networking
-sed -i 's/127.0.1.1/192.168.56.152\tPP-VPP02/g' /etc/hosts
+sed -i 's/127.0.1.1\tlocalhost/192.168.56.152\tPP-VPP02/g' /etc/hosts
 
 mkdir -p /var/log/vpp/
 cat << EOF | tee /var/log/vpp/vpp.log
